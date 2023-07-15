@@ -10,9 +10,10 @@ public interface WarehouseBO extends BusinessObject
     String getLocation();
     void setLocation(String location);
     int getCapacity();
-    void setCapacity(int Capacity);
+    void setCapacity(int capacity);
     String getDescription();
     String getDescription(LocaleInformation localeInformation);
-    void getDescription(String description, LocaleInformation localeInformation);
-
+    void setDescription(String description, LocaleInformation localeInformation);
+    void removeStockBO(String productID);
+    
 }
