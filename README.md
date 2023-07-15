@@ -29,5 +29,4 @@ Open Intershop studio
 Import Cartridges:
 
 File > Import > Intershop Studio > Existing Cartridge Projects into Workspace
-
 You are ready for a Start
