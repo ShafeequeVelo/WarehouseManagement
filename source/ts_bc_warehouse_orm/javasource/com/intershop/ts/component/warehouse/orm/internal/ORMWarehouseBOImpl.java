@@ -7,6 +7,8 @@ import com.intershop.beehive.businessobject.capi.BusinessObjectInvalidationHandl
 import com.intershop.beehive.core.capi.domain.AbstractExtensibleObjectBO;
 import com.intershop.beehive.core.capi.localization.LocaleInformation;
 import com.intershop.beehive.core.capi.naming.NamingMgr;
+import com.intershop.component.product.capi.ProductBO;
+import com.intershop.ts.component.warehouse.capi.StockBO;
 import com.intershop.ts.component.warehouse.capi.WarehouseBO;
 
 public class ORMWarehouseBOImpl extends AbstractExtensibleObjectBO<WarehousePO> implements WarehouseBO
@@ -79,6 +81,53 @@ public class ORMWarehouseBOImpl extends AbstractExtensibleObjectBO<WarehousePO> 
     {
         warehousePO.setDescription(description, localeInformation);
 
+    }
+
+    @Override
+    public StockBO createStockBO(String productID, int count)
+    {
+        if(productID != null && productID.length() > 0)
+        {
+            StockPO stockPO = factory.getObjectByPrimaryKey(new StockPOKey(productID, domainID, warehousePO.getUUID()));
+            if(stockPO == null)
+            {
+                stockPO = factory.create(productID, domainID, warehousePO);
+            }
+            stockPO.setCount(count);
+            return new ORMStockBOImpl(stockPO, getContext());
+        }
+        return null;
+    }
+
+    @Override
+    public StockBO updateStockBO(String productID, int count)
+    {
+        if(productID != null && productID.length() > 0)
+        {
+                StockPO stockPO = factory.getObjectByPrimaryKey(new StockPOKey(productID, domainID, warehousePO.getUUID()));
+                if(stockPO == null)
+                {
+                    return null;
+                }
+                stockPO.setCount(count);
+                return new ORMStockBOImpl(stockPO, getContext());
+        }
+        return null;
+    }
+
+    @Override
+    public StockBO getStockBO(String productID)
+    {
+        if(productID == null && productID.length() > 0)
+        {
+            StockPO stockPO = factory.getObjectByPrimaryKey(new StockPOKey(productID, domainID, warehousePO.getUUID()));
+            if(stockPO == null)
+            {
+                return null;
+            }
+            return new ORMStockBOImpl(stockPO, getContext());
+        }
+        return null;
     }
 
     @Override

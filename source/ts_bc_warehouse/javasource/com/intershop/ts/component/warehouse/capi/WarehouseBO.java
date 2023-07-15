@@ -14,6 +14,9 @@ public interface WarehouseBO extends BusinessObject
     String getDescription();
     String getDescription(LocaleInformation localeInformation);
     void setDescription(String description, LocaleInformation localeInformation);
+    StockBO createStockBO(String productID, int count);
+    StockBO updateStockBO(String productID, int count);
+    StockBO getStockBO(String productID);
     void removeStockBO(String productID);
     
 }
