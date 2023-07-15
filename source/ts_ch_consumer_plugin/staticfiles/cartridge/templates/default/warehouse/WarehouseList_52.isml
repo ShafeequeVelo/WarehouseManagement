@@ -1,0 +1,22 @@
+<!---[Comment]--->
+<iscontent type="text/html" charset="UTF-8" compact="true">
+
+List Of Warehouse
+<table>
+	<tr>
+		<td>SelectAll</td>
+		<td>Name</td>
+		<td>Location</td>
+		<td>Description</td>
+		<td>Capacity</td>
+	</tr>
+	<isloop iterator="WarehouseBOs" alias="WarehouseBO">
+		<tr>
+			<td><input type="checkbox"></td>
+			<td><isprint value="#WarehouseBO:Name#" /></td>
+			<td><isprint value="#WarehouseBO:Location#" /></td>
+			<td><isprint value="#WarehouseBO:Description#" /></td>
+			<td><isprint value="#WarehouseBO:Capacity#" /></td>
+		</tr>
+	</isloop>
+</table>

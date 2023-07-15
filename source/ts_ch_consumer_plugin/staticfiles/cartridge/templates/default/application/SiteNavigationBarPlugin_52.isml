@@ -207,7 +207,7 @@
 				<li><a
 					href="#URL(Action('ViewProcessList_52-ListAll'), Parameter('ChannelID', CurrentChannel:UUID),Parameter('JobNamePrefix','Catalog'), Parameter('SelectedMenuItem', 'ChannelCatalogs'))#">Batch Processes</a></li>
 			</isif>
-				<li><a href="">Warehouse</a>
+			<li><a href="#URL(Action('ViewWarehouseList_52-List'))#">Warehouses</a></li>
 		</ul>
 		</li>
 	</isif>

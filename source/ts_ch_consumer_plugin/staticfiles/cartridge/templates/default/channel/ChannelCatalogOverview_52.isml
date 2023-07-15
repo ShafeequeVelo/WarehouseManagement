@@ -454,7 +454,7 @@
 				<table border="0" cellspacing="0" cellpadding="0" width="100%">
 					<tr>
 						<td class="overview_arrow"><img src="#WebRoot()#/images/arrow_right_down.gif" width="9" height="9" alt="" border="0"/></td>
-						<td class="overview_subtitle" nowrap="nowrap" width="100%"><a href="#URL(Action('ViewProcessList_52-ListAll'), Parameter('ChannelID', CurrentChannel:UUID),Parameter('JobNamePrefix','Catalog'), Parameter('SelectedMenuItem', 'ChannelCatalogs'))#" class="overview_subtitle">Warehouses</a></td>
+						<td class="overview_subtitle" nowrap="nowrap" width="100%"><a href="#URL(Action('ViewWarehouseList_52-List'), Parameter('ChannelID', CurrentChannel:UUID),Parameter('JobNamePrefix','Catalog'), Parameter('SelectedMenuItem', 'ChannelCatalogs'))#" class="overview_subtitle">Warehouses</a></td>
 					</tr>
 					<tr>
 						<td colspan="2" class="overview_title_description" valign="top">List of Warehouse. <br/>&nbsp;</td>
