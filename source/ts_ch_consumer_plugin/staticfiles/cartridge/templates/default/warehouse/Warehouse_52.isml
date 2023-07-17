@@ -1,0 +1,53 @@
+<iscontent type="text/html" charset="UTF-8" compact="true">
+<isprint value="#WarehouseBO:Name#" />
+<form name="formMask"
+	action="#URL(Action('ViewWarehouse_52-Update'))#" method="post">
+	<input type="hidden" name="WarehouseID"
+		value="#stringtoHtml(WarehouseBO:ID)#"> <input type="hidden"
+		name="SelectedWarehouseID" value="#stringtoHtml(WarehouseBO:ID)#">
+	<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<isif condition="#isDefined(confirmDelete)#">
+		<ISMessageBox subject="warehouse" type="sdc" okbtnname="delete" cancelbtnname="cancel">					
+	</isif>	
+	
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="#WarehouseForm:Name:QualifiedName#"
+				value="<isprint value="#WarehouseBO:Name#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Location:</td>
+			<td><input type="text"
+				name="#WarehouseForm:Location:QualifiedName#"
+				value="<isprint value="#WarehouseBO:Location#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Description:</td>
+			<td><input type="text"
+				name="#WarehouseForm:Description:QualifiedName#"
+				value="<isprint value="#WarehouseBO:Description#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Capacity:</td>
+			<td><input type="text"
+				name="#WarehouseForm:Capacity:QualifiedName#"
+				value="<isprint value="#WarehouseBO:Capacity#"/>" />
+			<td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><input type="submit" name="update" value="Apply"></td>
+			<td><input type="submit" name="confirmDelete"  value="Delete"/></td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><input class="button" type="submit" name="back"
+				value="&lt;&lt; Back to List" /></td>
+		</tr>
+	</table>
+</form>
