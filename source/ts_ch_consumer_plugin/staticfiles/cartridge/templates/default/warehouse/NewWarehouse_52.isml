@@ -1,0 +1,40 @@
+<!---[Comment]--->
+<iscontent type="text/html" charset="UTF-8" compact="true">
+<form action="#URL(Action('ViewWarehouse_52-Dispatch'))#" method="post">
+	<table>
+	
+	<tr>
+			<td>Name:</td>
+			<td>
+				<input type="text" name="#WarehouseForm:Name:QualifiedName#" value="<isprint value="#WarehouseForm:Name:FormattedValue#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Location:</td>
+			<td>
+				<input type="text" name="#WarehouseForm:Location:QualifiedName#" value="<isprint value="#WarehouseForm:Location:FormattedValue#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Description:</td>
+			<td>
+				<input type="text" name="#WarehouseForm:Description:QualifiedName#" value="<isprint value="#WarehouseForm:Description:FormattedValue#"/>" />
+			<td>
+		</tr>
+		<tr>
+			<td>Capacity:</td>
+			<td>
+				<input type="text" name="#WarehouseForm:Capacity:QualifiedName#" value="<isprint value="#WarehouseForm:Capacity:FormattedValue#"/>" />
+			<td>
+		</tr>
+		<tr>
+					<td class="button"><input class="button" type="submit"
+						name="create" value="Apply" /></td>
+					<td class="button"><input class="button" type="submit"
+						name="cancelCreate" value="Cancel" /></td>
+				</tr>
+
+
+	</table>
+
+</form>
